@@ -66,8 +66,10 @@ export default function Home() {
           {/* Main Content with Left-aligned Profile */}
           <div className="flex flex-col md:flex-row justify-between items-center md:items-start">
             {/* Profile Image on Left */}
-            <div className="md:w-1/3 flex justify-center md:justify-start mb-8 md:mb-0">
-              <div className="w-56 h-auto relative">
+            {/* <div className="md:w-1/3 flex justify-center md:justify-start mb-8 md:mb-0">
+              <div className="w-56 h-auto  relative"> */}
+               <div className="md:w-1/3 flex justify-center md:justify-evenly mb-8 md:mb-0">
+               <div className="w-56 h-auto  relative">
                 <Image
                   src="/profile.png"
                   alt="Brenda Khamali"
@@ -79,41 +81,51 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Content on Right */}
-            <div className="md:w-2/3 flex flex-col items-center md:items-start">
-              <h1 className="text-4xl font-bold mb-2">Welcome to my Platform</h1>
-              <p className="text-lg mb-1">Software Engineer</p>
-              <p className="text-md mb-6">Full Stack Developer</p>
+           
+         {/* Content on Right */}
+<div>
+  {/* <h1 className="text-5xl font-bold mb-2">Welcome to my Platform</h1>
+  <p className="text-lg mb-6">Software Engineer</p>
+  <p className="text-md mb-6">Full Stack Developer</p> */}
 
-              {/* Bio Text */}
-              <div className="mb-8 max-w-xl">
-                <p>
-                  Hello everyone, I'm Brenda Khamali, a passionate Software Engineer
-                  specializing in full-stack development. I thrive on creating exceptional
-                  digital experiences using modern web technologies like React and Node.js.
-                  With a strong commitment to continuous learning and collaboration, I'm
-                  excited to be able to contribute to innovative projects that make a
-                  difference.
-                </p>
-              </div>
+<h1 className="text-5xl font-bold mb-2 text-center mt-10 mr-60">Welcome to my Platform</h1>
+  <div className="flex justify-center mb-6 mr-46">
+    <p className="text-lg">Software Engineer</p>
+  </div>
+  <div className="flex justify-end mb-6 mr-60">
+    <p className="text-md">Full Stack Developer</p>
+  </div>
 
-              {/* Social Icons */}
-              <div className="flex space-x-4 mb-8">
-                <a href="#" className="text-black hover:text-gray-700">
-                  <FaGithub size={24} />
-                </a>
-                <a href="#" className="text-black hover:text-gray-700">
-                  <FaLinkedin size={24} />
-                </a>
-                <a href="#" className="text-black hover:text-gray-700">
-                  <FaEnvelope size={24} />
-                </a>
-              </div>
+  {/* Bio Text */}
+  <div className="mb-8 max-w-xl">
+    <p>
+      Hello everyone, I'm Brenda Khamali, a passionate Software Engineer
+      specializing in full-stack development. I thrive on creating exceptional
+      digital experiences using modern web technologies like React and Node.js.
+      With a strong commitment to continuous learning and collaboration, I'm
+      excited to be able to contribute to innovative projects that make a
+      difference.
+    </p>
+  </div>
 
-              {/* CV Button */}
-              <button className="bg-orange-500 text-white px-8 py-3 rounded-md hover:bg-orange-600 transition duration-300">
-                Download CV
-              </button>
+  {/* Social Icons */}
+  <div className="flex space-x-4 mb-8">
+    <a href="#" className="text-black hover:text-gray-700">
+      <FaGithub size={24} />
+    </a>
+    <a href="#" className="text-black hover:text-gray-700">
+      <FaLinkedin size={24} />
+    </a>
+    <a href="#" className="text-black hover:text-gray-700">
+      <FaEnvelope size={24} />
+    </a>
+  </div>
+
+  {/* CV Button */}
+  <button className="bg-orange-500 text-white px-8 py-3 rounded-md hover:bg-orange-600 transition duration-300">
+    Download CV
+  </button>
+{/* </div> */}
             </div>
           </div>
 
