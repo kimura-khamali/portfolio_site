@@ -51,7 +51,7 @@ export default function Home() {
                   layout="responsive"
                 />
               </div>
-              <div className="absolute top-0 left-0 w-24 h-24">
+              <div className="absolute top-0 left-0 w-55 h-50">
                 <Image
                   src="/star.png"
                   alt="Triangle shape"
@@ -141,7 +141,7 @@ export default function Home() {
                   layout="responsive"
                 />
               </div>
-              <div className="absolute bottom-0 right-0 w-24 h-24 transform rotate-180">
+              <div className="absolute bottom-0 right-0 w-55 h-24 transform rotate-180">
                 <Image
                   src="/star.png"
                   alt="Triangle shape"
@@ -165,7 +165,7 @@ export default function Home() {
                   layout="responsive"
                 />
               </div>
-              <div className="absolute bottom-0 left-0 w-24 h-24">
+              <div className="absolute bottom-0 left-0 w-55 h-24">
                 <Image
                   src="/star.png"
                   alt="Triangle shape"
