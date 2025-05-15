@@ -1,16 +1,15 @@
 'use client'
 import React from 'react';
+import Image from 'next/image';
 import shawazi from '../../assets/shawazi.png';
 import shawazi_product from '../../assets/shaproduct.png';
 import Suubi from '../../assets/suubi.png';
-// import Akili from '../../assets/akili.png';
-import Akili from '../../assets/akili (1).png'
+import Akili from '../../assets/akili (1).png';
 import Evogreen from '../../assets/evogreen.png';
 import Portfolio from '../../assets/Brenda.png';
-import Hero from '../../assets/Hero.png';
+// import Hero from '../../assets/Hero.png';
+import Tech_Lead from '../../assets/Tech-lead.png';
 import Trevoh from '../../assets/trevoh.png';
-// import starIcon from '../../assets/star.png';
-// import flowerIcon from '../../assets/flower.png';
 
 const ProjectShowcase = () => {
   const projects = [
@@ -58,28 +57,16 @@ const ProjectShowcase = () => {
     },
     {
       title: 'Tech Lead',
-      screenshot: Hero,
+      screenshot: Tech_Lead,
       link: 'https://tech-lead-lr7t.vercel.app/',
       category: 'Web Development'
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white relative py-16 px-4 sm:px-6 lg:px-8">
-      {/* Decorative elements */}
-      {/* <img 
-        src={flowerIcon} 
-        alt="Decorative flower" 
-        className="absolute top-16 left-16 w-32 h-32 opacity-70 z-0" 
-      /> */}
-      {/* <img 
-        src={starIcon} 
-        alt="Decorative star" 
-        className="absolute bottom-16 right-16 w-24 h-24 opacity-70 z-0" 
-      /> */}
-      
+    <div className="min-h-screen bg-white text-gray-800 relative py-16 px-4 sm:px-6 lg:px-8">
       {/* Triangle shape in the background */}
-      <div className="absolute left-0 top-0 w-72 h-72 bg-rose-200 opacity-20 clip-triangle z-0"></div>
+      <div className="absolute left-0 top-0 w-72 h-72 bg-rose-200 opacity-20 z-0"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         <h2 className="text-4xl font-bold text-center mb-16">My Projects</h2>
@@ -88,7 +75,7 @@ const ProjectShowcase = () => {
           {projects.map((project, index) => (
             <div 
               key={index} 
-              className="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition-transform hover:-translate-y-2 duration-300 group"
+              className="bg-[#AB9898] rounded-lg overflow-hidden shadow-lg transform transition-transform hover:-translate-y-2 duration-300 group"
             >
               <a 
                 href={project.link} 
@@ -96,19 +83,26 @@ const ProjectShowcase = () => {
                 rel="noopener noreferrer"
                 className="block"
               >
-                <div className="relative overflow-hidden">
-                  {/* <img
+                <div className="relative w-full h-48 overflow-hidden">
+                  <Image
                     src={project.screenshot}
                     alt={project.title}
-                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-                  /> */}
+                    className="transition-transform duration-300 group-hover:scale-110"
+                    width={400}
+                    height={225}
+                    style={{ 
+                      objectFit: 'cover',
+                      width: '100%',
+                      height: '100%'
+                    }}
+                  />
                   <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-white mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-gray-100 text-sm">
                     {project.category}
                   </p>
                 </div>
@@ -119,7 +113,7 @@ const ProjectShowcase = () => {
       </div>
       
       {/* Decorative circle */}
-      <div className="absolute right-0 top-0 w-64 h-64 rounded-full bg-indigo-600 opacity-10 z-0"></div>
+      <div className="absolute right-0 top-0 w-64 h-64 rounded-full bg-indigo-600 opacity-10"></div>
       
       {/* CSS for clip paths */}
       <style jsx>{`
