@@ -6,11 +6,11 @@ import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      <Head>
+      {/* <Head>
         <title>Brenda Khamali - Software Engineer</title>
         <meta name="description" content="Software Engineer Portfolio" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      </Head> */}
 
       <main className="container mx-auto px-4 py-8 relative">
         {/* Top Navigation Icons */}
