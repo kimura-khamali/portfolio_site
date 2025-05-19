@@ -237,11 +237,12 @@ export default function Home() {
 
               {/* Bio Text */}
               <div className="mb-8 max-w-xl">
-                <p>
-                  Hello everyone, I'm Brenda Khamali, a passionate Software Engineer
+             
+               <p>
+                  Hello everyone, I&apos;m Brenda Khamali, a passionate Software Engineer
                   specializing in full-stack development. I thrive on creating exceptional
                   digital experiences using modern web technologies like React and Node.js.
-                  With a strong commitment to continuous learning and collaboration, I'm
+                  With a strong commitment to continuous learning and collaboration, I&apos;m
                   excited to be able to contribute to innovative projects that make a
                   difference.
                 </p>

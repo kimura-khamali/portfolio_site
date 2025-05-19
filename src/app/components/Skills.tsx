@@ -1,5 +1,6 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Code, Palette, Database, Users, Wrench, X } from 'lucide-react';
 import { StaticImageData } from 'next/image';
 
@@ -220,11 +221,13 @@ const CollageView: React.FC<CollageViewProps> = ({ category, onClose }) => {
           {projects.map((project, index) => (
             <div key={index} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all border border-gray-200">
               <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={project.image.src} 
+                <Image 
+                  src={project.image} 
                   alt={project.title}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority={index < 3}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <h3 className="absolute bottom-3 left-4 font-bold text-xl text-white">{project.title}</h3>
@@ -254,20 +257,22 @@ const CollageView: React.FC<CollageViewProps> = ({ category, onClose }) => {
         >
           <div className="relative w-full max-w-4xl mx-auto overflow-hidden rounded-lg">
             {/* Image container with optimized display settings */}
-            <div className="relative w-full h-auto flex justify-center items-center">
-              <img 
-                src={selectedProject.image.src} 
+            <div className="relative w-full h-[80vh] flex justify-center items-center">
+              <Image 
+                src={selectedProject.image} 
                 alt={selectedProject.title}
                 className="max-w-full max-h-[80vh] object-contain shadow-2xl"
+                fill
+                sizes="100vw"
                 style={{
-                  imageRendering: 'crisp-edges',
-                  objectFit: 'contain'
+                  objectFit: 'contain',
                 }}
+                priority
               />
               {/* Close button */}
               <button 
                 onClick={closeProjectDetails}
-                className="absolute top-2 right-2 bg-black bg-opacity-60 text-white p-2 rounded-full hover:bg-opacity-80 transition-all duration-200 shadow-lg"
+                className="absolute top-2 right-2 bg-black bg-opacity-60 text-white p-2 rounded-full hover:bg-opacity-80 transition-all duration-200 shadow-lg z-10"
                 aria-label="Close image view"
               >
                 <X size={24} />
@@ -333,23 +338,9 @@ const HexagonSkillCard: React.FC<HexagonSkillCardProps> = ({ title, icon, skills
 const Skills: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<CategoryData | null>(null);
 
-  // Use media query to check if device is mobile
-  const [isMobile, setIsMobile] = useState(false);
-  
-  // Effect to check screen size
-  React.useEffect(() => {
-    const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    // Check initially
-    checkIfMobile();
-    
-    // Add event listener for resize
-    window.addEventListener('resize', checkIfMobile);
-    
-    // Cleanup
-    return () => window.removeEventListener('resize', checkIfMobile);
+  // Effect for any initialization if needed
+  useEffect(() => {
+    // Component initialization if needed
   }, []);
 
   const skillCategories: CategoryData[] = [
